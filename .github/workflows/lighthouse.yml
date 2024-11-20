@@ -22,10 +22,13 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
+    - name: Install Lighthouse CI
+      run: npm install -g @lhci/cli
+
     - name: Build project
       run: npm run build
 
     - name: Start server and run Lighthouse CI
       run: |
-        npm run start &
+        npx serve@latest out &
         lhci autorun
