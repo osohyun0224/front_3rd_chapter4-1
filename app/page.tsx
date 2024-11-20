@@ -1,34 +1,76 @@
 import Image from "next/image";
-import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
+    <div
+      style={{
+        display: "grid",
+        gridTemplateRows: "20px 1fr 20px",
+        alignItems: "center",
+        justifyItems: "center",
+        minHeight: "100vh",
+        padding: "80px",
+        gap: "64px",
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
+      <main
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "32px",
+          gridRowStart: 2,
+        }}
+      >
         <Image
-          className={styles.logo}
+          style={{ filter: "invert(0)" }}
           src="https://nextjs.org/icons/next.svg"
           alt="Next.js logo"
           width={180}
           height={38}
           priority
         />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
+        <ol
+          style={{
+            paddingLeft: 0,
+            margin: 0,
+            fontSize: "14px",
+            lineHeight: "24px",
+            letterSpacing: "-0.01em",
+            listStylePosition: "inside",
+          }}
+        >
+          <li style={{ marginBottom: "8px" }}>
+            Get started by editing <code style={{ background: "#f0f0f0", padding: "2px 4px", borderRadius: "4px", fontWeight: 600 }}>src/app/page.tsx</code>.
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
 
-        <div className={styles.ctas}>
+        <div style={{ display: "flex", gap: "16px" }}>
           <a
-            className={styles.primary}
+            style={{
+              appearance: "none",
+              borderRadius: "128px",
+              height: "48px",
+              padding: "0 20px",
+              border: "1px solid transparent",
+              transition: "background 0.2s, color 0.2s, border-color 0.2s",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "16px",
+              lineHeight: "20px",
+              fontWeight: 500,
+              background: "#171717",
+              color: "#ffffff",
+              gap: "8px",
+            }}
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Image
-              className={styles.logo}
               src="https://nextjs.org/icons/vercel.svg"
               alt="Vercel logomark"
               width={20}
@@ -37,20 +79,30 @@ export default function Home() {
             Deploy now
           </a>
           <a
+            style={{
+              borderColor: "rgba(0, 0, 0, 0.08)",
+              minWidth: "180px",
+            }}
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.secondary}
           >
             Read our docs
           </a>
         </div>
       </main>
-      <footer className={styles.footer}>
+      <footer
+        style={{
+          gridRowStart: 3,
+          display: "flex",
+          gap: "24px",
+        }}
+      >
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
+          style={{ display: "flex", alignItems: "center", gap: "8px" }}
         >
           <Image
             aria-hidden
@@ -65,6 +117,7 @@ export default function Home() {
           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
+          style={{ display: "flex", alignItems: "center", gap: "8px" }}
         >
           <Image
             aria-hidden
@@ -79,6 +132,7 @@ export default function Home() {
           href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
+          style={{ display: "flex", alignItems: "center", gap: "8px" }}
         >
           <Image
             aria-hidden
