@@ -50,6 +50,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Install dependencies if cache is missing
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+
       - name: Build
         run: npm run build
 
