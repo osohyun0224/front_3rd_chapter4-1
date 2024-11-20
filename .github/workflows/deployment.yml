@@ -25,14 +25,6 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: Cache node modules
-      uses: actions/cache@v3
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
