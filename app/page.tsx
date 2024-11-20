@@ -2,75 +2,36 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateRows: "20px 1fr 20px",
-        alignItems: "center",
-        justifyItems: "center",
-        minHeight: "100vh",
-        padding: "80px",
-        gap: "64px",
-        fontFamily: "Arial, sans-serif",
-      }}
-    >
-      <main
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "32px",
-          gridRowStart: 2,
-        }}
-      >
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
-          style={{ filter: "invert(0)" }}
+          className="dark:invert"
           src="https://nextjs.org/icons/next.svg"
           alt="Next.js logo"
           width={180}
           height={38}
           priority
         />
-        <ol
-          style={{
-            paddingLeft: 0,
-            margin: 0,
-            fontSize: "14px",
-            lineHeight: "24px",
-            letterSpacing: "-0.01em",
-            listStylePosition: "inside",
-          }}
-        >
-          <li style={{ marginBottom: "8px" }}>
-            Get started by editing <code style={{ background: "#f0f0f0", padding: "2px 4px", borderRadius: "4px", fontWeight: 600 }}>src/app/page.tsx</code>.
+        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
+          <li className="mb-2">
+            Get started by editing{" "}
+            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
+              src/app/page.tsx
+            </code>
+            .
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
 
-        <div style={{ display: "flex", gap: "16px" }}>
+        <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
-            style={{
-              appearance: "none",
-              borderRadius: "128px",
-              height: "48px",
-              padding: "0 20px",
-              border: "1px solid transparent",
-              transition: "background 0.2s, color 0.2s, border-color 0.2s",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "16px",
-              lineHeight: "20px",
-              fontWeight: 500,
-              background: "#171717",
-              color: "#ffffff",
-              gap: "8px",
-            }}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Image
+              className="dark:invert"
               src="https://nextjs.org/icons/vercel.svg"
               alt="Vercel logomark"
               width={20}
@@ -79,11 +40,8 @@ export default function Home() {
             Deploy now
           </a>
           <a
-            style={{
-              borderColor: "rgba(0, 0, 0, 0.08)",
-              minWidth: "180px",
-            }}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -91,18 +49,12 @@ export default function Home() {
           </a>
         </div>
       </main>
-      <footer
-        style={{
-          gridRowStart: 3,
-          display: "flex",
-          gap: "24px",
-        }}
-      >
+      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ display: "flex", alignItems: "center", gap: "8px" }}
         >
           <Image
             aria-hidden
@@ -114,10 +66,10 @@ export default function Home() {
           Learn
         </a>
         <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ display: "flex", alignItems: "center", gap: "8px" }}
         >
           <Image
             aria-hidden
@@ -129,10 +81,10 @@ export default function Home() {
           Examples
         </a>
         <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ display: "flex", alignItems: "center", gap: "8px" }}
         >
           <Image
             aria-hidden
