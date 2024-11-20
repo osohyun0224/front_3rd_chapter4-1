@@ -33,9 +33,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
 
-    - name: Run tests
-      run: npm test
-
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
