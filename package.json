@@ -12,8 +12,6 @@
     "build-and-lighthouse": "npm run build && npm run serve & sleep 5 && npm run lighthouse"
   },
   "dependencies": {
-    "css-minimizer-webpack-plugin": "^7.0.0",
-    "mini-css-extract-plugin": "^2.9.2",
     "next": "14.2.18",
     "react": "^18",
     "react-dom": "^18"
