@@ -9,7 +9,7 @@ on:
       url:
         description: 'URL to run Lighthouse on'
         required: false
-        default: 'http://localhost:8080'
+        default: 'http://localhost:3000'
 
 jobs:
   lhci:
@@ -23,11 +23,14 @@ jobs:
           node-version: 20
       - name: Install dependencies
         run: |
+          npm install
           npm install -g @lhci/cli@0.12.x
           npm install -g http-server
       - name: Start local server
         run: http-server . -p 8080 &
       - name: Run Lighthouse CI
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
         run: |
           URL="${{ github.event.inputs.url || 'http://localhost:3000' }}"
           lhci autorun --collect.url=$URL
