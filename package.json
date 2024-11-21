@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "serve": "npx serve@latest out -l 3000",
+    "lighthouse": "lighthouse http://localhost:3000 --output json --output-path ./lighthouse-report.json --quiet && jq '.categories | {performance: .performance.score, accessibility: .accessibility.score, seo: .seo.score}' ./lighthouse-report.json",
+    "build-and-lighthouse": "npm run build && npm run serve & sleep 5 && npm run lighthouse"
   },
   "dependencies": {
     "react": "^18",
