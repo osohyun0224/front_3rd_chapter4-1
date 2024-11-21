@@ -13,6 +13,7 @@ export default function Services() {
           src="https://vacgom-for-hanghae.s3.ap-southeast-2.amazonaws.com/img-intro-services-new.webp"
           alt="서비스 소개 이미지"
           className="w-full h-full object-cover rounded-2xl"
+          loading="lazy"
         />
       </div>
       <div className="flex flex-col justify-center items-start gap-10 self-stretch px-36 py-15 bg-white my-16">
@@ -21,6 +22,7 @@ export default function Services() {
           alt="홈페이지 로고"
           width={100}
           height={100}
+          loading="lazy"
         />
         <div className="text-gray-900 text-4xl font-bold">
           영유아를 위한 헬스케어 서비스, Vacgom
@@ -47,6 +49,7 @@ export default function Services() {
             alt="백신 로고"
             width={350}
             height={350}
+            loading="lazy"
           />
         </div>
       </div>
@@ -57,6 +60,7 @@ export default function Services() {
             alt="공동 돌보미"
             width={350}
             height={350}
+            loading="lazy"
           />
         </div>
         <div className="flex flex-col justify-center gap-7 flex-1">
@@ -103,6 +107,7 @@ export default function Services() {
             alt="공동 돌보미"
             width={350}
             height={350}
+            loading="lazy"
           />
         </div>
         <div className="flex flex-col justify-center gap-7 flex-1">
