@@ -5,7 +5,7 @@ const nextConfig = {
     if (!isServer) {
       config.optimization = {
         ...config.optimization,
-        minimize: true,
+        minimize: false,
       };
     }
     return config;
