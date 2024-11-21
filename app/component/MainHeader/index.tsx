@@ -11,6 +11,7 @@ const MainHeader = () => {
           alt="홈페이지 로고"
           width={84}
           height={24}
+          loading="lazy"
         />
       </div>
       <nav className="flex gap-4">
