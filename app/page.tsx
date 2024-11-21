@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import MainHeader from './component/MainHeader';
 import Footer from './component/Footer';
