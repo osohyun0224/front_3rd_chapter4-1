@@ -25,15 +25,11 @@ jobs:
         run: |
           npm install
           npm install -g @lhci/cli@0.12.x
-          npm install -g http-server
-      - name: Start local server
-        run: http-server . -p 8080 &
       - name: Run Lighthouse CI
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
         run: |
-          URL="${{ github.event.inputs.url || 'http://localhost:3000' }}"
-          lhci autorun --collect.url=$URL
+          lhci autorun --collect.staticDistDir=./out
       - name: Format and Log Lighthouse score
         run: |
           echo "Lighthouse 성능 측정 결과"
