@@ -4,20 +4,20 @@
 
   - [1. 과제 개요](#️-1-과제-개요)
   - [2. 배포 프로세스 구조](#-2-배포-프로세스-구조)
-  - [2. 주요 링크](#-2-주요-링크)
-  - [3. 주요 개념 정리](#-3-주요-개념-정리)
+  - [3. 주요 링크](#-2-주요-링크)
+  - [4. 주요 개념 정리](#-3-주요-개념-정리)
     - [(1) GitHub Actions과 CI/CD 도구](#1-github-actions과-cicd-도구)
     - [(2) S3와 정적 웹 호스팅](#2-s3와-정적-웹-호스팅)
     - [(3) CloudFront와 CDN](#3-cloudfront와-cdn)
     - [(4) 캐시 무효화(Cache Invalidation)](#4-캐시-무효화cache-invalidation)
     - [(5) Repository Secret과 환경 변수](#5-repository-secret과-환경-변수)
-  - [4. 배포 프로세스 정리](#-4-배포-프로세스-정리)
+  - [5. 배포 프로세스 정리](#-4-배포-프로세스-정리)
     - [GitHub Actions 워크플로우](#github-actions-워크플로우)
-  - [5. S3 → CloudFront 성능 최적화 분석 보고서](#-5-s3--cloudfront-성능-최적화-분석-보고서)
+  - [6. S3 → CloudFront 성능 최적화 분석 보고서](#-5-s3--cloudfront-성능-최적화-분석-보고서)
     - [(1)테스트 환경](#-1-테스트-환경)
     - [(2)테스트 결과](#-2테스트-결과)
     - [(3)CDN 사용 후 성능 개선](#-3cdn-사용-후-성능-개선)
-  - [6. 프로젝트 자체 성능 개선 과정](#-6-프로젝트-자체성능-개선-과정)
+  - [7. 프로젝트 자체 성능 개선 과정](#-6-프로젝트-자체성능-개선-과정)
     - [(1) 성능 개선 미션 소개](#-1-성능-개선-미션-소개)
     - [(2) 성능 개선의 필요성](#2-성능-개선의-필요성)
     - [(3) 개선 전 원본 홈페이지의 성능](#-3-개선-전-원본-홈페이지의-성능)
@@ -44,12 +44,12 @@
 ![alt text](app/assets/image/img-deploy-pipeline.png)
 
 
-## 🔗 2. 주요 링크 
+## 🔗 3. 주요 링크 
 - S3 단독 사용: http://chapter4-1-osohyun.s3-website-ap-southeast-2.amazonaws.com
 - CloudFront CDN 배포 : https://d20mdg6f8ge0nb.cloudfront.net/
   
 
-## 📚 3. 주요 개념 정리
+## 📚 4. 주요 개념 정리
 
 ### (1) GitHub Actions과 CI/CD 도구
 - GitHub Actions는 GitHub에서 제공하는 CI/CD(Continuous Integration/Continuous Deployment) 플랫폼으로, 소프트웨어 개발 워크플로우를 자동화하는 도구입니다. 이를 통해 코드 변경사항이 발생할 때마다 자동으로 린트, 빌드, 테스트, 배포 과정을 실행할 수 있습니다.
@@ -82,7 +82,7 @@
 - 민감한 정보를 안전하게 보호하여 보안 사고를 예방합니다.
 
 
-## 👷 4. 배포 프로세스 정리
+## 👷 5. 배포 프로세스 정리
 
 ### GitHub Actions 워크플로우
 자동화된 배포는 다음과 같이 진행됩니다:)
@@ -170,7 +170,7 @@ Node.js 20 버전을 설정하여 최신 환경에서 빌드를 진행합니다.
 ```
 
 
-## 📊 5. S3 → CloudFront 성능 최적화 분석 보고서
+## 📊 6. S3 → CloudFront 성능 최적화 분석 보고서
 
 ### 📌 (1) 테스트 환경
 - S3 단독 사용: http://chapter4-1-osohyun.s3-website-ap-southeast-2.amazonaws.com
@@ -213,7 +213,7 @@ DOMContentLoaded 시간이 54.9% 감소하여, 초기 페이지 렌더링이 훨
 리소스 크기는 동일하지만, CDN의 효율적인 전송 방식 덕분에 전반적인 성능이 개선되었습니다.
 
 
-## 🚀 6. 프로젝트 자체성능 개선 과정 
+## 🚀 7. 프로젝트 자체성능 개선 과정 
 
 ### 📕 (1) 성능 개선 미션 소개
 몇 달 전, 급하게 사이드 프로젝트 Vacgom의 공식 홈페이지를 개발하게 되었었고 전혀 성능을 고려하지 않고 급하게 배포해 출시했습니다.
@@ -241,7 +241,7 @@ DOMContentLoaded 시간이 54.9% 감소하여, 초기 페이지 렌더링이 훨
 
 #### 2) CloudFront로 배포한 사이트의 성능
 
-![alt text](app/assets/image/img-before-report-cloudfront.png)
+![alt text](app/assets/image/img-before-report-cloudFront.png)
 
 
 CDN을 통해 배포한 사이트의 성능이 S3로 배포한 사이트의 성능보다 더 빠르게 측정되었지만 아직 개선이 필요한 부분이 있습니다.
